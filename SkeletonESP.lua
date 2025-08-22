@@ -65,8 +65,6 @@ local function DrawESP(plr)
         end
     end
 
-    return { Visibility = Visibility, Colorize = Colorize }
-
     local function UpdaterR15()
         local connection
         connection = game:GetService("RunService").RenderStepped:Connect(function()
@@ -259,6 +257,8 @@ local function DrawESP(plr)
     else 
         coroutine.wrap(UpdaterR6)()
     end
+     return { Visibility = Visibility, Colorize = Colorize }
+
 end
 
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
