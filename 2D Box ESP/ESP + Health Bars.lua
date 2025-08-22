@@ -1,5 +1,6 @@
 -- Preview: https://cdn.discordapp.com/attachments/796378086446333984/818089455897542687/unknown.png
 -- Made by Blissful#4992
+local ESPs = {}
 local Settings = {
     Box_Color = Color3.fromRGB(255, 0, 0),
     Tracer_Color = Color3.fromRGB(255, 0, 0),
@@ -72,7 +73,9 @@ local function ESP(plr)
         healthbar = NewLine(3, black),
         greenhealth = NewLine(1.5, black)
     }
-
+    if not ESPs[plr] then
+    ESPs[plr] = library
+    end
     local function Colorize(color)
         for u, x in pairs(library) do
             if x ~= library.healthbar and x ~= library.greenhealth and x ~= library.blacktracer and x ~= library.black then
@@ -162,6 +165,7 @@ local function ESP(plr)
         end)
     end
     coroutine.wrap(Updater)()
+    return library
 end
 
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
@@ -175,3 +179,9 @@ game.Players.PlayerAdded:Connect(function(newplr)
         coroutine.wrap(ESP)(newplr)
     end
 end)
+
+return {
+    Settings = Settings,
+    ESPs = ESPs
+}
+
