@@ -9,7 +9,7 @@ local camera = workspace.CurrentCamera
 local on = true -- Use this if your making gui
 
 function Set(val)
-    on = Val
+    on = val
 end
 
 local Box_Color = Color3.fromRGB(255, 0, 0)
