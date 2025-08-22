@@ -2,7 +2,7 @@ local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 local Camera = game:GetService("Workspace").CurrentCamera
 local ESPs = {}
-
+local mastertoggle = false
 
 local function DrawLine()
     local l = Drawing.new("Line")
@@ -145,7 +145,7 @@ local function DrawESP(plr)
                         limbs.RightLowerLeg_RightFoot.To = Vector2.new(RF.X, RF.Y)
                     end
 
-                    if limbs.Head_UpperTorso.Visible ~= true then
+                    if limbs.Head_UpperTorso.Visible ~= true and mastertoggle then
                         Visibility(true)
                     end
                 else 
@@ -231,10 +231,10 @@ local function DrawESP(plr)
                         limbs.RightLeg_LowerTorso.From = Vector2.new(LT.X, LT.Y)
                         limbs.RightLeg_LowerTorso.To = Vector2.new(RUL.X, RUL.Y)
                     end
+if limbs.Head_Spine.Visible ~= true and mastertoggle then
+    Visibility(true)
+end
 
-                    if limbs.Head_Spine.Visible ~= true then
-                        Visibility(true)
-                    end
                 else 
                     if limbs.Head_Spine.Visible ~= false then
                         Visibility(false)
@@ -275,4 +275,4 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
 end)
 
-return ESPs
+return {ESPs = ESPs, MT = Mastertoggle)
