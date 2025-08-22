@@ -270,3 +270,10 @@ game.Players.PlayerAdded:Connect(function(newplr)
         DrawESP(newplr)
     end
 end)
+return {
+    Visibility = Visibility,
+    Colorize = Colorize
+}
+
+
+
