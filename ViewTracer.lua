@@ -11,6 +11,10 @@ local Settings = {
 
 local toggle = true -- use this variable if you wanna integrate into a GUI
 
+function Set(val)
+    toggle = val
+end
+
 local player = game:GetService("Players").LocalPlayer
 local camera = game:GetService("Workspace").CurrentCamera
 
@@ -74,4 +78,4 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
 end)
 
-return {Settings = Settings, Toggle = toggle}
+return {Settings = Settings, SV = Set}
