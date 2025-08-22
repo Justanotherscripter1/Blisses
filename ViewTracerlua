@@ -73,3 +73,5 @@ game.Players.PlayerAdded:Connect(function(newplr)
         coroutine.wrap(ESP)(newplr)
     end
 end)
+
+return {Settings = Settings}
