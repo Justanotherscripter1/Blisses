@@ -275,4 +275,4 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
 end)
 
-return {ESPs = ESPs, MT = Mastertoggle)
+return { ESPs = ESPs, MT = mastertoggle }
