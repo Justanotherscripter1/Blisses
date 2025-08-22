@@ -1,6 +1,8 @@
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 local Camera = game:GetService("Workspace").CurrentCamera
+local ESPs = {}
+
 
 local function DrawLine()
     local l = Drawing.new("Line")
@@ -263,13 +265,13 @@ end
 
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
     if v.Name ~= Player.Name then
-        DrawESP(v)
+        ESPs[v] = DrawESP(v)
     end
 end
 
 game.Players.PlayerAdded:Connect(function(newplr)
     if newplr.Name ~= Player.Name then
-        DrawESP(newplr)
+        ESPs[newplr] = DrawESP(newplr)
     end
 end)
 
