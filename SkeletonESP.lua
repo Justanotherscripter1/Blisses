@@ -275,4 +275,5 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
 end)
 
+return ESPs
 
