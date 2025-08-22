@@ -65,6 +65,8 @@ local function DrawESP(plr)
         end
     end
 
+    return { Visibility = Visibility, Colorize = Colorize }
+
     local function UpdaterR15()
         local connection
         connection = game:GetService("RunService").RenderStepped:Connect(function()
@@ -270,10 +272,5 @@ game.Players.PlayerAdded:Connect(function(newplr)
         DrawESP(newplr)
     end
 end)
-return {
-    Visibility = Visibility,
-    Colorize = Colorize
-}
-
 
 
