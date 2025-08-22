@@ -8,6 +8,10 @@ local camera = workspace.CurrentCamera
 --// Settings:
 local on = true -- Use this if your making gui
 
+function Set(val)
+    on = Val
+end
+
 local Box_Color = Color3.fromRGB(255, 0, 0)
 local Box_Thickness = 2
 local Box_Transparency = 1 -- 1 Visible, 0 Not Visible
@@ -428,3 +432,5 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
     coroutine.wrap(ESP)()
 end)
+
+return {SV = Set}
